@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="f7717089-2bfc-44f6-a123-c6d2f47f75e7" name="developer01" url="http://nematghaznavi.ir">
+        <fileTransfer rootFolder="/developer01.nematghaznavi.ir" host="nematghaznavi.ir" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
