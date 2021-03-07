@@ -4,7 +4,9 @@
     <list default="true" id="91f86790-fca3-4cb8-b7f8-5e20c663e807" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mvc/controller/user.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/controller/user.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/view/user/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/view/user/register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvc/view/page/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/view/page/home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvc/view/user/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/view/user/profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system/view.php" beforeDir="false" afterPath="$PROJECT_DIR$/system/view.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -506,7 +508,7 @@
       <workItem from="1614657633712" duration="19572000" />
       <workItem from="1614744216480" duration="597000" />
       <workItem from="1615024709372" duration="2084000" />
-      <workItem from="1615089991348" duration="2249000" />
+      <workItem from="1615089991348" duration="10146000" />
     </task>
     <task id="LOCAL-00001" summary="create blog cms">
       <created>1611489474331</created>
@@ -594,6 +596,26 @@
     <MESSAGE value="create blog cms" />
     <MESSAGE value=" blog cms modify" />
     <option name="LAST_COMMIT_MESSAGE" value=" blog cms modify" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php-line-method">
+          <url>file://$PROJECT_DIR$/mvc/controller/user.php</url>
+          <line>31</line>
+          <properties>
+            <option name="className" value="\UserController" />
+            <option name="methodName" value="loginCheck" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/mvc/view/blog/post.php</url>
+          <line>30</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />

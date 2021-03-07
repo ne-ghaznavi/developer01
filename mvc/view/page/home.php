@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="fa" dir="rtl">
 <head>
@@ -15,8 +16,12 @@
        <ul class="navmenu ">
            <li><a href="#">خانه</a></li>
            <li><a href="/user/login">ورود</a></li>
-           <li><a href="#">وبلاگ</a></li>
+           <li><a href="/blog/home">وبلاگ</a></li>
            <li><a href="#">تماس با ما</a></li>
+           <?php
+           if(isset($_SESSION['email'])){?>
+               <li><a href="/user/profile">حساب کاربری</a></li>
+               <?php } ?>
        </ul>
     </header>
 </div>

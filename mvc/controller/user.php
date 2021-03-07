@@ -8,13 +8,17 @@ class UserController {
         View::render("/user/profile.php");
     }
 
+    public function admin(){
+        View::render("/user/admin.php");
+    }
+
     public function home(){
         View::renderHome("/page/home.php");
     }
 
     public function logout(){
         session_destroy();
-        header("Location: /user/login");
+        header("Location: /");
     }
 
     public function login(){
@@ -35,15 +39,23 @@ class UserController {
         $result = $query->fetch();
 
         if($result == null){
-            echo "you are not register";
+            echo "you are not register <a href='/user/login'>login</a>";
         }
 
         if($password == $result['password']){
+
             $_SESSION['email'] = $email;
             $_SESSION['user_id'] = $result["user_id"];
+
+            if($email == 'admin@gmail.com'){
+                header("Location: /user/admin");
+                exit;
+            }
+
             header("Location: /user/profile");
+
         }else{
-            echo "Your password not match";
+            echo "Your password not match <a href='/user/login'>login</a>";
         }
 
     }

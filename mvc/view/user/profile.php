@@ -1,5 +1,12 @@
 <?php
 require "system/db.php";
+$isGeust = !isset($_SESSION['email']);
+
+if($isGeust){
+    echo "Please Login <a href='/user/login'>Login</a>";
+    exit;
+}
+
 $email = $_SESSION['email'];
 $user_query = $pdo->query("SELECT * FROM dev_user WHERE email='$email'");
 while ($user_result = $user_query->fetch()){
@@ -7,6 +14,8 @@ while ($user_result = $user_query->fetch()){
     $lastname = $user_result['lastname'];
     $job = $user_result['job'];
     $address = $user_result['address'];
+    $phone = $user_result['phone'];
+    $mobile = $user_result['mobile'];
 }
 ?>
 
@@ -27,7 +36,7 @@ while ($user_result = $user_query->fetch()){
         <!-- Breadcrumb -->
         <nav aria-label="breadcrumb" class="main-breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
                 <li class="breadcrumb-item"><a href="javascript:void(0)">User</a></li>
                 <li class="breadcrumb-item active" aria-current="page">User Profile</li>
             </ol>
@@ -41,9 +50,9 @@ while ($user_result = $user_query->fetch()){
                         <div class="d-flex flex-column align-items-center text-center">
                             <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="Admin" class="rounded-circle" width="150">
                             <div class="mt-3">
-                                <h4>John Doe</h4>
-                                <p class="text-secondary mb-1">Full Stack Developer</p>
-                                <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
+                                <h4><?= $firstname . " " . $lastname ?></h4>
+                                <p class="text-secondary mb-1"><?= $job ?></p>
+                                <p class="text-muted font-size-sm"><?= $address?></p>
                                 <a class="btn btn-primary">Edit</a>
                                 <a href="/user/logout" class="btn btn-outline-primary">Logout</a>
                             </div>
@@ -83,7 +92,7 @@ while ($user_result = $user_query->fetch()){
                                 <h6 class="mb-0">Full Name</h6>
                             </div>
                             <div class="col-sm-9 text-secondary">
-                                Kenneth Valdez
+                                <?= $firstname . " " . $lastname ?>
                             </div>
                         </div>
                         <hr>
@@ -92,7 +101,7 @@ while ($user_result = $user_query->fetch()){
                                 <h6 class="mb-0">Email</h6>
                             </div>
                             <div class="col-sm-9 text-secondary">
-                                fip@jukmuh.al
+                                <?= $email ?>
                             </div>
                         </div>
                         <hr>
@@ -101,7 +110,7 @@ while ($user_result = $user_query->fetch()){
                                 <h6 class="mb-0">Phone</h6>
                             </div>
                             <div class="col-sm-9 text-secondary">
-                                (239) 816-9029
+                                <?= $phone ?>
                             </div>
                         </div>
                         <hr>
@@ -110,7 +119,7 @@ while ($user_result = $user_query->fetch()){
                                 <h6 class="mb-0">Mobile</h6>
                             </div>
                             <div class="col-sm-9 text-secondary">
-                                (320) 380-4539
+                                <?= $mobile ?>
                             </div>
                         </div>
                         <hr>
@@ -119,7 +128,7 @@ while ($user_result = $user_query->fetch()){
                                 <h6 class="mb-0">Address</h6>
                             </div>
                             <div class="col-sm-9 text-secondary">
-                                Bay Area, San Francisco, CA
+                                <?= $address ?>
                             </div>
                         </div>
                     </div>
