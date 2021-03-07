@@ -9,7 +9,7 @@ class UserController {
     }
 
     public function admin(){
-        View::render("/user/admin.php");
+        View::renderDashbord("/user/admin.php");
     }
 
     public function home(){

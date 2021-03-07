@@ -21,6 +21,14 @@ class View{
 
         require_once ("theme/blog.php");
     }
+
+    static public function renderDashbord($filePath, $data=array()){
+        ob_start();
+        require_once ("mvc/view/" . $filePath);
+        $content = ob_get_clean();
+
+        require_once ("theme/dashbord.php");
+    }
 }
 
 ?>

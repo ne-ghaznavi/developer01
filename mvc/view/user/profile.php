@@ -17,10 +17,23 @@ while ($user_result = $user_query->fetch()){
     $phone = $user_result['phone'];
     $mobile = $user_result['mobile'];
 }
+
+if(isset($_POST['btn_submit_post'])){
+    $title = $_POST['title'];
+    $author = $_SESSION['email'];
+    $content = $_POST['content'];
+    $data = $_POST['data'];
+    $tag = $_POST['tag'];
+    $id = $_SESSION['user_id'];
+
+    $insert_query = $pdo->query("INSERT INTO dev_post (user_id, post_title, post_author, post_data, post_img, post_content, post_tag) 
+                                                                                              VALUES ('$id', '$title', '$author', '$data', 'somethingm', '$content', '$tag' )");
+    header("location: /user/profile");
+}
 ?>
 
 <!doctype html>
-<html lang="en">
+<html lang="fa" dir="rtl">
 <head>
     <title>Profile</title>
     <meta charset="UTF-8">
@@ -36,9 +49,9 @@ while ($user_result = $user_query->fetch()){
         <!-- Breadcrumb -->
         <nav aria-label="breadcrumb" class="main-breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="/">Home</a></li>
-                <li class="breadcrumb-item"><a href="javascript:void(0)">User</a></li>
-                <li class="breadcrumb-item active" aria-current="page">User Profile</li>
+                <li class="breadcrumb-item"><a href="">خانه</a></li>
+                <li class="breadcrumb-item"><a href="javascript:void(0)">کاربر</a></li>
+                <li class="breadcrumb-item">حساب کاربری</li>
             </ol>
         </nav>
         <!-- /Breadcrumb -->
@@ -134,58 +147,50 @@ while ($user_result = $user_query->fetch()){
                     </div>
                 </div>
                 <div class="row gutters-sm">
-                    <div class="col-sm-6 mb-3">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">assignment</i>Project Status</h6>
-                                <small>Web Design</small>
-                                <div class="progress mb-3" style="height: 5px">
-                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <small>Website Markup</small>
-                                <div class="progress mb-3" style="height: 5px">
-                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 72%" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <small>One Page</small>
-                                <div class="progress mb-3" style="height: 5px">
-                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 89%" aria-valuenow="89" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <small>Mobile Template</small>
-                                <div class="progress mb-3" style="height: 5px">
-                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <small>Backend API</small>
-                                <div class="progress mb-3" style="height: 5px">
-                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 66%" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
+                    <div class="">
+                        <div>
+
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>شماره</th>
+                                        <th>عنوان</th>
+                                        <th>نویسنده</th>
+                                        <th>تاریخ</th>
+                                        <th>تصویر</th>
+                                        <th>محتوا</th>
+                                        <th>تگ</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                        require "system/db.php";
+                                        $id = $_SESSION['user_id'];
+                                        $select_query = $pdo->query("SELECT * FROM dev_post WHERE user_id='$id'");
+                                        while ($result_select = $select_query->fetch()){?>
+                                            <tr>
+                                                <td><?= $result_select['post_id'] ?></td>
+                                                <td><?= $result_select['post_title'] ?></td>
+                                                <td><?= $result_select['post_author'] ?></td>
+                                                <td><?= $result_select['post_data'] ?></td>
+                                                <td><?= $result_select['post_img'] ?></td>
+                                                <td><?= $result_select['post_content'] ?></td>
+                                                <td><?= $result_select['post_tag'] ?></td>
+                                            </tr>
+                                        <?php } ?>
+                                </tbody>
+                            </table>
                         </div>
-                    </div>
-                    <div class="col-sm-6 mb-3">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">assignment</i>Project Status</h6>
-                                <small>Web Design</small>
-                                <div class="progress mb-3" style="height: 5px">
-                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <small>Website Markup</small>
-                                <div class="progress mb-3" style="height: 5px">
-                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 72%" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <small>One Page</small>
-                                <div class="progress mb-3" style="height: 5px">
-                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 89%" aria-valuenow="89" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <small>Mobile Template</small>
-                                <div class="progress mb-3" style="height: 5px">
-                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <small>Backend API</small>
-                                <div class="progress mb-3" style="height: 5px">
-                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 66%" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
+                        <h5 class="text-primary">ایجاد پست جدید</h5>
+                        <div>
+                            <form action="" method="post" multiple="">
+                                <input class="form-control mb-2" type="text" placeholder="عنوان" name="title">
+                                <input class="form-control mb-2" type="date" name="data">
+                                <input class="form-control mb-2" type="file" name="image">
+                                <input class="form-control mb-2" type="text" placeholder="تگ" name="tag">
+                                <textarea class="form-control mb-2" name="content"></textarea>
+                                <button class="btn btn-success" type="submit" name="btn_submit_post">انتشار</button>
+                            </form>
                         </div>
                     </div>
                 </div>

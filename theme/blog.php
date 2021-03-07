@@ -17,7 +17,7 @@
             </button>
             <div class="navbar-collapse collapse" id="navbar">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a href="/user/login" class="nav-link">Admin</a></li>
+                    <li class="nav-item"><a href="/user/admin" class="nav-link">Admin</a></li>
                 </ul>
             </div>
         </div>
