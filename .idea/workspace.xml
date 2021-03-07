@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91f86790-fca3-4cb8-b7f8-5e20c663e807" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mvc/controller/user.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/controller/user.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mvc/view/user/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/view/user/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvc/view/user/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/view/user/profile.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/system/loader.php" beforeDir="false" afterPath="$PROJECT_DIR$/system/loader.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/system/view.php" beforeDir="false" afterPath="$PROJECT_DIR$/system/view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/theme/user.php" beforeDir="false" afterPath="$PROJECT_DIR$/theme/user.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +29,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -174,12 +179,14 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/mvc/view/user" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\dev\workspace\web\projects\developer01\mvc\view\user" />
       <recent name="E:\dev\workspace\web\projects\developer01" />
       <recent name="E:\dev\workspace\web\projects\developer01\images" />
       <recent name="E:\dev\workspace\web\projects\developer01\admin" />
@@ -501,7 +508,10 @@
       <workItem from="1614405181583" duration="1960000" />
       <workItem from="1614599875959" duration="4797000" />
       <workItem from="1614626240719" duration="599000" />
-      <workItem from="1614657633712" duration="8075000" />
+      <workItem from="1614657633712" duration="19572000" />
+      <workItem from="1614744216480" duration="597000" />
+      <workItem from="1615024709372" duration="2084000" />
+      <workItem from="1615089991348" duration="1087000" />
     </task>
     <task id="LOCAL-00001" summary="create blog cms">
       <created>1611489474331</created>

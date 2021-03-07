@@ -2,8 +2,12 @@
 require_once ("system/loader.php");
 
 $uri = getUri();
-$parts = explode('/', $uri);
 
+$parts = explode('/', $uri);
+if($uri == "/"){
+    require_once ("mvc/view/page/home.php");
+    exit;
+}
 $controller = $parts[1];
 $method = $parts[2];
 
