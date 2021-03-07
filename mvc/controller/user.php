@@ -63,23 +63,37 @@ class UserController {
     private function registerCheck(){
         require "system/db.php";
 
+        $fname = $_POST['fname'];
+        $lname = $_POST['lname'];
+        $phone = $_POST['phone'];
+        $mobile = $_POST['mobile'];
+        $address = $_POST['address'];
+        $job = $_POST['job'];
         $email = $_POST['email'];
         $password = $_POST['password'];
+        $confirmPassword = $_POST['confirmPassword'];
 
-        $query = $pdo->query("SELECT * FROM dev_user WHERE email='$email'");
-        $result = $query->fetch();
+        $query_select = $pdo->query("SELECT * FROM dev_user WHERE email='$email'");
+        $result_select = $query_select->fetch();
 
-        if($result == null){
-            echo "you are not register";
+        if($result_select != null){
+            echo "you are already registered";
+            exit;
         }
 
-        if($password == $result['password']){
-            $_SESSION['email'] = $email;
-            $_SESSION['user_id'] = $result["user_id"];
-            header("Location: /user/profile");
-        }else{
-            echo "Your password not match";
+        if(strlen($password)<3 || strlen($confirmPassword)<3){
+            echo "you password not strong";
+            exit;
         }
+
+         if($password != $confirmPassword){
+             echo "you password not matched";
+             exit;
+         }
+
+        $query_insert = $pdo->query("INSERT INTO dev_user (firstname, lastname, email, password,phone, mobile, address, job) 
+                                          VALUES ('$fname', '$lname', '$email', '$password','$phone', '$mobile', '$address', '$job')");
+        header("Location: /user/login");
 
     }
 
